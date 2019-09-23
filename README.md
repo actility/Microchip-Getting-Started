@@ -1,4 +1,3 @@
-
 # ThingPark Activation Getting Started
 
 RaphaelApfeldorfer-Actility edited this page on Sep 20th, 2019
@@ -14,7 +13,7 @@ This guide describes the following:
   1.  [Get a ThingPark Activation account](#get-a-partner-account-for-thingPark-activation)
   1.  [Collect the Device identifiers](#collect-the-device-identifiers)
   1.  [Provision device in ThingPark Activation](#provision-device-in-thingpark-activation)
-  1.  [Provision/Activate device in ThingPark Wireless](#provision/activate-device-in-thingpark-wireless)
+  1.  [Provision/Activate device in ThingPark Wireless](#provisionactivate-device-in-thingpark-wireless)
 
 
 ## Get a partner account for ThingPark Activation
@@ -54,7 +53,7 @@ TKM INFO: 0x31110123d345666e2dbd
 ### Open Key Manager
 Key Manager application allows Device Manufacturers to safely import the AppKeys of their devices into ThingPark Activation (Note: this is usually done via API but we will present the GUI here for simplicity)
 Login your ThingPark Activation account and open [Key Manager](https://js.labs.thingpark.com/keyManager)
-![Key Manager UI](resource/KeyManager.gif)
+![Key Manager UI](resource/KeyManager.gif)<!-- .element style=width="600px" -->
 
 ### Define an AS Transport Key
 ThingPark Activation is a secure service which provides End-to-End security so it delivers encrypted payload and encrypted AppSKey to the Application Servers.
