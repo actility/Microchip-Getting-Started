@@ -53,7 +53,7 @@ TKM INFO: 0x31110123d345666e2dbd
 ### Open Key Manager
 Key Manager application allows Device Manufacturers to safely import the AppKeys of their devices into ThingPark Activation (Note: this is usually done via API but we will present the GUI here for simplicity)
 Login your ThingPark Activation account and open [Key Manager](https://js.labs.thingpark.com/keyManager)
-![Key Manager UI](resource/KeyManager.gif)<!-- .element style=width="600px" -->
+![Key Manager UI](resource/KeyManager.gif)<!-- .element style="width: 600px" -->
 
 ### Define an AS Transport Key
 ThingPark Activation is a secure service which provides End-to-End security so it delivers encrypted payload and encrypted AppSKey to the Application Servers.
@@ -68,11 +68,15 @@ Verifying - Enter pass phrase for mykey-private.key: 1234
 Enter pass phrase for mykey-private.key: 1234
 writing RSA key
 ```
+
 To create ASTK, go to ASTK Menu and Press Create button
+
 ![Create ASTK](resource/ASTK.gif)
  
 Select HSM Group `HSM_LABS_PROD` for ECC608A production parts and copy paste your RSA Public key `mykey-public.pem` as text
+
 ![Input RSA Public Key](resource/CreateASTK.gif)
+
  Copy the output in `encryptedASKey.txt` file and retrieve the plaintext ASTK with the following command 
  ```
 > cat encryptedASKey.txt | xxd -r -p | openssl rsautl -decrypt -inkey mykey-private.key | xxd -p
@@ -82,11 +86,14 @@ Enter pass phrase for mykey-private.key: 1234
  
 ### Provision device in Join Server
 Click on Add Device -> Create
+
 ![Create Device](resource/Device.gif)
+
 Select Secure Element = Yes and your LoRaWAN version
 Select HSM Group `HSM_LABS_PROD` for ECC608A production parts and copy paste your identifier retrieve from ECC608A previously into DevEUI/AppEUI/TKM info input boxes.
 Home NS NetID is 000002 for Actility development platform DEV1
 Select the ASTK created previously
+
 ![Device creation fields](resource/CreateDevice.gif)
  
  On you device appears in Key Manager, it is ready for activation.
@@ -97,9 +104,12 @@ Select the ASTK created previously
 Login your ThingPark DEV1 partner account and open [Device Manager](https://dev1.thingpark.com/deviceManager)
 The device is provisioned as usual, except no AppKey needs to be provided to the Network Server
 Click on Add Device -> Create
+
 ![Create Device](resource/DeviceDM.gif)
+
 Select Manufacturer = Generic and you LoRaWAN device profile, activation type and fill in the DevEUI/AppEUI retrieved previously.
 Note that it is mandatory to select a Connectivity Plan and an Application Server routing Profile for your device to be fully provisioned and ready to be activated.
+
 ![Device creation fields](resource/CreateDeviceDM.gif)
 
 ### Activate device 
