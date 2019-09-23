@@ -53,7 +53,7 @@ TKM INFO: 0x31110123d345666e2dbd
 ### Open Key Manager
 Key Manager application allows Device Manufacturers to safely import the AppKeys of their devices into ThingPark Activation (Note: this is usually done via API but we will present the GUI here for simplicity)
 Login your ThingPark Activation account and open [Key Manager](https://js.labs.thingpark.com/keyManager)
-![Key Manager UI](resource/KeyManager.gif)<!-- .element style="width: 600px" -->
+![Key Manager UI](resource/KeyManager.gif | width=600))
 
 ### Define an AS Transport Key
 ThingPark Activation is a secure service which provides End-to-End security so it delivers encrypted payload and encrypted AppSKey to the Application Servers.
