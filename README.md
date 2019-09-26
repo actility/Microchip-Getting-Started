@@ -116,5 +116,12 @@ Note that it is mandatory to select a Connectivity Plan and an Application Serve
 The device is now ready to be activated
 LoRaWAN data can be monitored using [Wireless Logger](https://dev1.thingpark.com/wLogger)
 
+Note however it is shown encrypted in Wireless Logger as the service delivers end-to-end security so the payload delivered to the Application Server is encrypted with the ASTK.
+To decode applicative payload sent over the tunnel interface, first decode <AppSKey> metadata using ASKey:
+```
+echo $AppSKey | xxd -r -p | openssl enc -d -aes-128-cbc -nosalt -iv 0 -K $ASKey -nopad | xxd -p
+```
+Then, decrypt the <payload_hex> as specified in LoRaWAN using clear text AppSKey
+
 ## Support
 Should you need support or if you have any feedback, please contact Actility support by entering a support case request at partner@actility.com.
