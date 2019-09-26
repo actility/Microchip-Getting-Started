@@ -19,7 +19,7 @@ This guide describes the following:
 ## Get a partner account for ThingPark Activation
 To request an account on ThingPark Activation and ThingPark Wireless, post the following email
 ```
-To: partner@actility.com
+To: partner-activation@actility.com
 Subject: ThingPark Activation evaluation
 Mail: Please provide me a free test account for ThingPark Activation.
 Account Name: Paul Smith
@@ -53,7 +53,7 @@ TKM INFO: 0x31110123d345666e2dbd
 ### Open Key Manager
 Key Manager application allows Device Manufacturers to safely import the AppKeys of their devices into ThingPark Activation (Note: this is usually done via API but we will present the GUI here for simplicity)
 Login your ThingPark Activation account and open [Key Manager](https://js.labs.thingpark.com/keyManager)
-![Key Manager UI](resource/KeyManager.gif)<!-- .element style="width: 600px" -->
+<img src=resource/KeyManager.gif alt="Key Manager UI" width="600"/>
 
 ### Define an AS Transport Key
 ThingPark Activation is a secure service which provides End-to-End security so it delivers encrypted payload and encrypted AppSKey to the Application Servers.
@@ -71,11 +71,11 @@ writing RSA key
 
 To create ASTK, go to ASTK Menu and Press Create button
 
-![Create ASTK](resource/ASTK.gif)
- 
+<img src=resource/ASTK.gif alt="Create ASTK" width="600"/>
+
 Select HSM Group `HSM_LABS_PROD` for ECC608A production parts and copy paste your RSA Public key `mykey-public.pem` as text
 
-![Input RSA Public Key](resource/CreateASTK.gif)
+<img src=resource/CreateASTK.gif alt="Input RSA Public Key" width="600"/>
 
  Copy the output in `encryptedASKey.txt` file and retrieve the plaintext ASTK with the following command 
  ```
@@ -87,15 +87,15 @@ Enter pass phrase for mykey-private.key: 1234
 ### Provision device in Join Server
 Click on Add Device -> Create
 
-![Create Device](resource/Device.gif)
+<img src=resource/Device.gif alt="Create Device" width="600"/>
 
 Select Secure Element = Yes and your LoRaWAN version
 Select HSM Group `HSM_LABS_PROD` for ECC608A production parts and copy paste your identifier retrieve from ECC608A previously into DevEUI/AppEUI/TKM info input boxes.
 Home NS NetID is 000002 for Actility development platform DEV1
 Select the ASTK created previously
 
-![Device creation fields](resource/CreateDevice.gif)
- 
+<img src=resource/CreateDevice.gif alt="Device creation fields" width="600"/>
+
  On you device appears in Key Manager, it is ready for activation.
  However, it must also be provisioned in Network Server before being able to transmit on the radio.
 
@@ -105,12 +105,12 @@ Login your ThingPark DEV1 partner account and open [Device Manager](https://dev1
 The device is provisioned as usual, except no AppKey needs to be provided to the Network Server
 Click on Add Device -> Create
 
-![Create Device](resource/DeviceDM.gif)
+<img src=resource/DeviceDM.gif alt="Create Device" width="600"/>
 
 Select Manufacturer = Generic and you LoRaWAN device profile, activation type and fill in the DevEUI/AppEUI retrieved previously.
 Note that it is mandatory to select a Connectivity Plan and an Application Server routing Profile for your device to be fully provisioned and ready to be activated.
 
-![Device creation fields](resource/CreateDeviceDM.gif)
+<img src=resource/CreateDeviceDM.gif alt="Device creation fields" width="600"/>
 
 ### Activate device 
 The device is now ready to be activated
