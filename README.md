@@ -52,7 +52,9 @@ TKM INFO: 0x31110123d345666e2dbd
 ## Provision device in ThingPark Activation
 ### Open Key Manager
 Key Manager application allows Device Manufacturers to safely import the AppKeys of their devices into ThingPark Activation (Note: this is usually done via API but we will present the GUI here for simplicity)
+
 Login your ThingPark Activation account and open [Key Manager](https://js.labs.thingpark.com/keyManager)
+
 <img src=resource/KeyManager.gif alt="Key Manager UI" width="600"/>
 
 ### Define an AS Transport Key
@@ -102,6 +104,7 @@ Select the ASTK created previously
 ## Provision/Activate device in ThingPark Wireless
 ### Provision device in Network Server
 Login your ThingPark DEV1 partner account and open [Device Manager](https://dev1.thingpark.com/deviceManager)
+
 The device is provisioned as usual, except no AppKey needs to be provided to the Network Server
 Click on Add Device -> Create
 
