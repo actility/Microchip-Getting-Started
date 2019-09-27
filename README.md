@@ -55,7 +55,7 @@ TKM INFO: 0x31110123d345666e2dbd
 ## Provision device in ThingPark Activation
 ### Open Key Manager
 Key Manager application allows Device Manufacturers to safely import the AppKeys of their devices into ThingPark Activation (Note: this is usually done via API but we will present the GUI here for simplicity)
-When using Microchip's Secure Element on their devices, the on-boarding doesn't require them to know the `AppKey`: they can provide `TKM_INFO` instead.
+When using Microchip's Secure Element on their devices, the on-boarding doesn't require them to know the _AppKey_: they can provide _TKM_INFO_ instead.
 
 Login your ThingPark Activation account and open [Key Manager](https://js.labs.thingpark.com/keyManager)
 
@@ -79,7 +79,7 @@ To create ASTK, go to ASTK Menu and Press Create button
 
 <img src=resource/ASTK.gif alt="Create ASTK" width="600"/>
 
-Select `HSM Group` = `HSM_LABS_PROD` for ECC608A production parts and copy paste your RSA Public key `mykey-public.pem` as text
+Select _HSM Group_=`HSM_LABS_PROD` for ECC608A production parts and copy paste your RSA Public key `mykey-public.pem` as text
 
 <img src=resource/CreateASTK.gif alt="Input RSA Public Key" width="600"/>
 
@@ -95,30 +95,30 @@ Click on Add Device -> Create
 
 <img src=resource/Device.gif alt="Create Device" width="600"/>
 
-Select `Secure Element` = `Yes` and your `LoRaWAN version`
-Select `HSM Group` = `HSM_LABS_PROD` for ECC608A production parts and copy paste your identifier retrieve from ECC608A previously into `DevEUI`/`AppEUI`/`TKM info` input boxes.
-`Home NS NetID` = `000002` for Actility development platform DEV1
-Select the `ASTK` created previously
+Select _Secure Element_=`Yes` and your _LoRaWAN version_
+Select _HSM Group_=`HSM_LABS_PROD` for ECC608A production parts and copy paste your identifier retrieve from ECC608A previously into _DevEUI_/_AppEUI_/_TKM info_ input boxes.
+_Home NS NetID_=`000002` for Actility development platform DEV1
+Select the _ASTK_ created previously
 
 <img src=resource/CreateDevice.gif alt="Device creation fields" width="600"/>
 
  Once you device appears in Key Manager, it is ready for activation.
- However, it must also be provisioned in Network Server before being able to transmit on the radio.
+ However, it must first be provisioned in Network Server before being able to transmit on the radio.
 
 ## Provision/Activate device in ThingPark Wireless
 
 ### Create Application Server and routing profile
  
-To create a new Application Server routing profile, first create a local Application Server. Click on Application Servers, Add Application servers -> Create and select type `HTTP Application Server (LoRaWAN)`
+To create a new Application Server routing profile, first create a local Application Server. Click on Application Servers, Add Application servers -> Create and select _Type_=`HTTP Application Server (LoRaWAN)`
 
 <img src=resource/CreateAS.gif alt="Create AS" width="600"/>
 
-Select `Content Type` according to your Application Server requirement, but note that the Application Server **must** support end-to-end encryption (see #activate-device).
+Select _Content Type_ according to your Application Server requirement, but note that the Application Server **must** support end-to-end encryption (see [Activate device](#activate-device)).
 Then add the destination route by clicking Route -> Add.
 
 <img src=resource/CreateASroute.gif alt="Create AS route" width="600"/>
 
-Once the Application Server is created, create an Application Server routing profile. Click on AS routing profiles -> Create and select type `Local application server`.
+Once the Application Server is created, create an Application Server routing profile. Click on AS routing profiles -> Create and select _Type_=`Local application server` and your _Destination_.
 
 <img src=resource/CreateASRP.gif alt="Create AS routing profile" width="600"/>
 
@@ -126,29 +126,29 @@ Once the Application Server is created, create an Application Server routing pro
 
 Login your ThingPark DEV1 partner account and open [Device Manager](https://dev1.thingpark.com/deviceManager)
 
-The device is provisioned as usual on ThingPark Wireless, except no `AppKey` needs to be provided to the Network Server.
+The device is provisioned as usual on ThingPark Wireless, except no _AppKey_ needs to be provided to the Network Server.
 
 Click on Add Device -> Create
 
 <img src=resource/DeviceDM.gif alt="Create Device" width="600"/>
 
-Select `Manufacturer` = `Generic` and you `LoRaWAN device profile`, `Activation type` and fill in the `DevEUI`/`AppEUI` retrieved previously.
+Select _Manufacturer_=`Generic` and your _LoRaWAN device profile_, _Activation type_ and fill in the _DevEUI_/_AppEUI_ retrieved previously.
 
 <img src=resource/CreateDeviceDM.gif alt="Device creation fields" width="600"/>
 
 Note that it is mandatory to select a Connectivity Plan and an Application Server routing Profile for your device to be fully provisioned and ready to be activated. 
 
 ### Activate device 
-The device is now ready to be activated
+The device is now ready to be powered-on and activated.
 LoRaWAN data can be monitored using [Wireless Logger](https://dev1.thingpark.com/wLogger)
 
-Note however it is shown encrypted in Wireless Logger as the service delivers end-to-end security so the payload delivered to the Application Server is encrypted with the ASTK.
+Note that data is shown encrypted in Wireless Logger since the service delivers end-to-end security. The payload is delivered to the Application Server encrypted with the ASTK.
 
-If your Application Server does not support end-to-end security, you can decode payload manually. To decode applicative payload sent over the tunnel interface, first decode `<AppSKey>` metadata using `ASKey`:
+If your Application Server does not support end-to-end security, you can decode payload manually. To decode applicative payload sent over the tunnel interface, first decode _<AppSKey>_ metadata using _ASKey_:
 ```
 echo $AppSKey | xxd -r -p | openssl enc -d -aes-128-cbc -nosalt -iv 0 -K $ASKey -nopad | xxd -p
 ```
-Then, decrypt the `<payload_hex>` as specified in LoRaWAN using clear text `AppSKey`
+Then, decrypt the _<payload_hex>_ as specified in LoRaWAN using clear text _AppSKey_.
 
 ## Support
 Should you need support or if you have any feedback, please contact Actility support by entering a support case request at partner@actility.com.
