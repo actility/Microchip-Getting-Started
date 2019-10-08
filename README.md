@@ -146,12 +146,11 @@ Note that data is shown encrypted in Wireless Logger since the service delivers 
 
 If your Application Server does not support end-to-end security, you can decode payload manually. 
 
-First, send data to an HTTP capture service such as [hookbin](https://hookbin.com/)
-Copy the endpoint address in destination of the Application Server created in [Create Application Server](#create-application-server-and-routing-profile), trigger an uplink on the board and refresh the Hookbin page.
+First, send data to an HTTP capture service such as [hookbin](https://hookbin.com/). Copy the endpoint address in destination of the Application Server created in [Create Application Server](#create-application-server-and-routing-profile), trigger an uplink on the board and refresh the Hookbin page:
 
 <img src=resource/hookbin.gif alt="Retrieve link from Hookbin" width="600"/>
 
-The applicative payload is present in ***<DevEUI_uplink>/<payload_hex>*** and the encrypted AppSKey in ***<DevEUI_uplink>/<AppSKey>***
+In <DevEUI_uplink> document, the applicative payload is present in ***<payload_hex>*** and the encrypted AppSKey in ***<AppSKey>***. It is encrypted with the ASTK created in [Define an AS Transport Key](#define-an-as-transport-key).
 
 Using pyThingPark package (available on Python 3 only, install with `pip3 install pyThingPark`), you can easily decode the <DevEUI_uplink> frame using the following code:
 
