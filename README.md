@@ -150,7 +150,7 @@ First, send data to an HTTP capture service such as [hookbin](https://hookbin.co
 
 <img src=resource/hookbin.gif alt="Retrieve link from Hookbin" width="600"/>
 
-In <DevEUI_uplink> document, the applicative payload is present in ***<payload_hex>*** and the encrypted AppSKey in ***<AppSKey>***. It is encrypted with the ASTK created in [Define an AS Transport Key](#define-an-as-transport-key).
+In <DevEUI_uplink> document, the applicative payload is present in ***<payload_hex>*** and the encrypted AppSKey in ***\<AppSKey>***. It is encrypted with the ASTK created in [Define an AS Transport Key](#define-an-as-transport-key).
 
 Using pyThingPark package (available on Python 3 only, install with `pip3 install pyThingPark`), you can easily decode the <DevEUI_uplink> frame using the following code:
 
