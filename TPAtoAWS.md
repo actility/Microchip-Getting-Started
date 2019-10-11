@@ -38,18 +38,18 @@ You need to record the ***ASKey*** (or ASTK) from your ThingPark Activation JS a
 ## Collect the AWS information
 From your AWS console, open your _IAM user menu_ and select _My Security Credentials_
 
-<img src=aws_resource/AwsSecurityCredentials.gif alt="AWS security crendentials UI" width="400"/>
+<img src=resource/aws/AwsSecurityCredentials.gif alt="AWS security crendentials UI" width="400"/>
 
 In the menu _Access keys_for CLI_, _SDK_, & _API access_, create an _Access Key_ if you don't already have one.
 
-<img src=aws_resource/AwsCreateAccessKey.gif alt="AWS Create Access Key" width="600"/>
+<img src=resource/aws/AwsCreateAccessKey.gif alt="AWS Create Access Key" width="600"/>
 
 Select _show secret access key_ and record both ***Access key ID*** and ***Secret access key***
 
 Next, go to _Services_->_IoT_Core_ and select _Settings_ from the leftbar menu.
 It shows your Customer EndPoint. 
 
-<img src=aws_resource/AwsCustomEndpoint.gif alt="AWS Custom Endpoint" width="600"/>
+<img src=resource/aws/AwsCustomEndpoint.gif alt="AWS Custom Endpoint" width="600"/>
 
 Record ***accountPrefix*** and ***region***
 
@@ -64,7 +64,7 @@ Input the following parameters in the token request
 * ***client_id***=`dev1-api/<tpw_login>`
 * ***client_secret***=`<tpw_password>`
 
-<img src=aws_resource/DxAdminLogin.gif alt="DX Admin Login UI" width="600"/>
+<img src=resource/aws/DxAdminLogin.gif alt="DX Admin Login UI" width="600"/>
 
 ### Declare DX dataflow to AWS account
 Next, go to _ThingPark DX Dataflow API_ using top level dropbox (it will keep your DX token set) and input the following parameters in 
@@ -109,7 +109,7 @@ _POST_ _/bridgeDataflows_
 Next, wait for the Dataflow to be activated (it can take 1 or 2 working days). Once it is available, login to your [ThingPark Wireless NS account](https://dev1.thingpark.com/networkManager).
 Edit your device, go to _Network_ section in left menubar and click on _Network routing_->_Change_
 
-<img src=aws_resource/DeviceManagerDataflow.gif alt="Device Routing Profile" width="600"/>
+<img src=resource/aws/DeviceManagerDataflow.gif alt="Device Routing Profile" width="600"/>
 
 Select ***AS routing profile***=`DATAFLOW`
 
@@ -122,13 +122,13 @@ Thanks to ThingPark X dataflow, no device provisioning is necessary in AWS IoT C
 
 You can view the device list in AWS IoT leftbar menu _Manage_->_Things_
 
-<img src=aws_resource/AwsManageThings.gif alt="AWS Manage Things" width="600"/>
+<img src=resource/aws/AwsManageThings.gif alt="AWS Manage Things" width="600"/>
 
 Data is published via MQTT on topic `aws/things/test/0004A310000AA69D/uplink` where ```test``` is defined in ***thingPrefix*** of the dataflow, and ```0004A310000AA69D``` is the device ***DevEUI***
 
 You can view the data in AWS IoT left menubar _Test_ -> _Subscribe_ and input ***Subscription Topic***=`aws/things/test/0004A310000AA69D/uplink`
 
-<img src=aws_resource/AwsTestTopic.gif alt="AWS Test Topic" width="600"/>
+<img src=resource/aws/AwsTestTopic.gif alt="AWS Test Topic" width="600"/>
 
 In this example, the data is available in "payload" = `32382E37432F38332E3646` (`28.7C/83.6F` in ASCII).
 
