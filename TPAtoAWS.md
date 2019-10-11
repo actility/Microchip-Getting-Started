@@ -38,18 +38,18 @@ You need to record the ***ASKey*** (or ASTK) from your ThingPark Activation JS a
 ## Collect the AWS information
 From your AWS console, open your _IAM user menu_ and select _My Security Credentials_
 
-<img src=aws_resource/AwsSecurityCredentials.gif alt="AWS security crendentials UI"/>
+<img src=aws_resource/AwsSecurityCredentials.gif alt="AWS security crendentials UI" width="300"/>
 
 In the menu _Access keys_for CLI_, _SDK_, & _API access_, create an _Access Key_ if you don't already have one.
 
-<img src=aws_resource/AwsCreateAccessKey.gif alt="AWS Create Access Key"/>
+<img src=aws_resource/AwsCreateAccessKey.gif alt="AWS Create Access Key" width="600"/>
 
 Select _show secret access key_ and record both ***Access key ID*** and ***Secret access key***
 
 Next, go to _Services_->_IoT_Core_ and select _Settings_ from the leftbar menu.
 It shows your Customer EndPoint. 
 
-<img src=aws_resource/AwsCustomEndpoint.gif alt="AWS Custom Endpoint"/>
+<img src=aws_resource/AwsCustomEndpoint.gif alt="AWS Custom Endpoint" width="600"/>
 
 Record ***accountPrefix*** and ***region***
 
