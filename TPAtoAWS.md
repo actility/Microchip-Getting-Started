@@ -38,7 +38,7 @@ You need to record the ***ASKey*** (or ASTK) from your ThingPark Activation JS a
 ## Collect the AWS information
 From your AWS console, open your _IAM user menu_ and select _My Security Credentials_
 
-<img src=aws_resource/AwsSecurityCredentials.gif alt="AWS security crendentials UI" width="300"/>
+<img src=aws_resource/AwsSecurityCredentials.gif alt="AWS security crendentials UI" width="400"/>
 
 In the menu _Access keys_for CLI_, _SDK_, & _API access_, create an _Access Key_ if you don't already have one.
 
@@ -64,10 +64,10 @@ Input the following parameters in the token request
 * ***client_id***=`dev1-api/<tpw_login>`
 * ***client_secret***=`<tpw_password>`
 
-<img src=aws_resource/KeyManager.gif alt="Key Manager UI" width="600"/>
+<img src=aws_resource/DxAdminLogin.gif alt="DX Admin Login UI" width="600"/>
 
 ### Declare DX dataflow to AWS account
-Next, go to `ThingPark DX Dataflow API` using top level dropbox (it will keep your DX token set) and input the following parameters in 
+Next, go to _ThingPark DX Dataflow API_ using top level dropbox (it will keep your DX token set) and input the following parameters in 
 
 _POST_ _/bridgeDataflows_
 
