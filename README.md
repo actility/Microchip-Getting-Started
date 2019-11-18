@@ -12,14 +12,15 @@ This guide describes the following:
 
   1.  [Get a ThingPark Activation account](#get-a-partner-account-for-thingPark-activation)
   1.  [Collect the Device identifiers](#collect-the-device-identifiers)
-  1.  [Provision device in ThingPark Activation](#provision-device-in-thingpark-activation)
+  1.  [Provision device in ThingPark Activation](#provision-device-in-semtech-js)
   1.  [Provision/Activate device in ThingPark Wireless](#provisionactivate-device-in-thingpark-wireless)
+  1.  [Move to production](#move-to-production)
 
 
 ## Get a partner account for ThingPark Activation
 To request an account on ThingPark Activation and ThingPark Wireless, post the following email
 ```
-To: partner-activation@actility.com
+To: partners.activation@actility.com
 Subject: ThingPark Activation evaluation
 Mail: Please provide me a free test account for ThingPark Activation.
 Account Name: Paul Smith
@@ -203,6 +204,22 @@ Using pyThingPark package (available on Python 3 only, install with `pip3 instal
         >>> clearPayload = uplink.decryptPayload(ASTK="48e616c7aae168017d14d97d50d5efef")
         >>> bytearray.fromhex(clearPayload).decode()
         '29.9C/85.8F'
+
+## Move to production
+Once the flow is validated and your system is ready to move to production, please contact Actility sales representatives in order to access our ThingPark Activation production services.
+ThingPark Activation is already connected to multiple operator Network Servers via ThingPark Exchange peering hub.
+
+Place your orders for Actility part number [ATECC608A-TNGACT](https://www.microchip.com/wwwproducts/en/ATECC608A-TNGACT) and you will receive parts along with a manifest file in JSON format.
+
+A full example of factory integration using ThingPark Activation API is available in this depot. It also works in your DEV1 partner account.
+From a ThingPark Activation user account credentials (user / password) and a Microchip manifest.json file, you can mass provision the full set of Secure Element listed in the manifest with a single command:
+```
+> python3 se_microchip.py --user user --password manifest.json
+``` 
+And de-provision with ```--delete``` keyword
+```
+> python3 se_microchip.py --delete --user user --password manifest.json
+``` 
 
 ## Support
 Should you need support or if you have any feedback, please contact Actility support by entering a support case request at partner@actility.com.

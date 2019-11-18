@@ -43,6 +43,13 @@ class MicrochipSEManifest:
                 dx.postFactoryDevice(dev)
             except: 
                 print("Error: could not provision {0}".format(dev))
+    def deprovision(self, bearerToken):
+        dx = dxMaker.DxMaker(bearerToken)
+        for se in self.seList:
+            try:
+                dx.deleteFactoryDevice(se.devEUI)
+            except: 
+                print("Error: could not deprovision DevEUI {0}".format(se.devEUI))
     def __repr__(self):
         return str(self.seList)
         
@@ -64,6 +71,10 @@ def main(argv):
     parser.add_argument(
         'manifest',
         help='ECC608A manifest file')
+    parser.add_argument(
+        '--delete',
+        help='Delete devices in manifest instead of provision them',
+        action="store_true", required=False)
     parser.add_argument(
         '--user',
         help='DX login on js-labs-api',
@@ -91,8 +102,13 @@ def main(argv):
         sys.exit(3)
     bearerToken = dx.getBearerToken()
     # Provision all ECC608A in manifest into account
-    manifest.provision(bearerToken)
-
+    if not args.delete:
+        print("\nProvision {0} devices in ThingPark Activation".format(len(manifest.seList)))
+        manifest.provision(bearerToken)
+    else:
+        print("\nDe-provision {0} devices in ThingPark Activation".format(len(manifest.seList)))
+        manifest.deprovision(bearerToken)
+        
 
 if __name__ == "__main__":
     main(sys.argv[1:])
