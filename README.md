@@ -1,6 +1,6 @@
 # ThingPark Activation Getting Started
 
-RaphaelApfeldorfer-Actility edited this page on Sep 20th, 2019
+RaphaelApfeldorfer-Actility edited this page on Nov 18th, 2019
 
 # ATECC608A-TNGACT Pre-Provisioned secure element with ThingPark Activation Getting Started Guide
 
@@ -16,6 +16,7 @@ This guide describes the following:
   1.  [Provision/Activate device in ThingPark Wireless](#provisionactivate-device-in-thingpark-wireless)
   1.  [Move to production](#move-to-production)
 
+It assumes you already have Microchip Technology's SAMR34 development kit with ECC608A socket and Actility personalized part. For more information about this kit, you can refer to https://github.com/MicrochipTech/atsamr34_ecc608a_actility.
 
 ## Get a partner account for ThingPark Activation
 To request an account on ThingPark Activation and ThingPark Wireless, post the following email
