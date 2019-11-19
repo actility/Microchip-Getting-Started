@@ -16,7 +16,7 @@ This guide describes the following:
 ## Get a partner account for ThingPark Activation
 To request an account on ThingPark Activation and ThingPark Wireless, post the following email
 ```
-To: partner-activation@actility.com
+To: partners.activation@actility.com
 Subject: ThingPark Activation evaluation
 Mail: Please provide me a free test account for ThingPark Activation.
 Account Name: Paul Smith
