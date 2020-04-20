@@ -16,7 +16,7 @@ This guide describes the following:
 ## Get a partner account for ThingPark Activation
 To request an account on ThingPark Activation and ThingPark Wireless, post the following email
 ```
-To: partners.activation@actility.com
+To: support@actility.com
 Subject: ThingPark Activation evaluation
 Mail: Please provide me a free test account for ThingPark Activation.
 Account Name: Paul Smith
@@ -135,4 +135,4 @@ In this example, the data is available in "payload" = `32382E37432F38332E3646` (
 >  The Dataflow takes care of the AppSKey decryption and Payload decryption to deliver unencrypted payload with end-to-end security to the AWS IoT core account.
 
 ## Support
-Should you need support or if you have any feedback, please contact Actility support by entering a support case request at partner@actility.com.
+Should you need support or if you have any feedback, please contact Actility support by entering a support case request at support@actility.com.
