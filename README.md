@@ -21,7 +21,7 @@ It assumes you already have Microchip Technology's SAMR34 development kit with E
 ## Get a partner account for ThingPark Activation
 To request an account on ThingPark Activation and ThingPark Wireless, post the following email
 ```
-To: partners.activation@actility.com
+To: support@actility.com
 Subject: ThingPark Activation evaluation
 Mail: Please provide me a free test account for ThingPark Activation.
 Account Name: Paul Smith
@@ -223,4 +223,4 @@ And de-provision with ```--delete``` keyword
 ``` 
 
 ## Support
-Should you need support or if you have any feedback, please contact Actility support by entering a support case request at partner@actility.com.
+Should you need support or if you have any feedback, please contact Actility support by entering a support case request at support@actility.com.
